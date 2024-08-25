@@ -144,13 +144,13 @@ namespace RE4_PS4NS_PACK_TOOL
                             string tgapatch = Path.Combine(ImageFolder, i.ToString("D4") + ".tga");
 
                             FileInfo imageFile = null;
-                            if (File.Exists(ddspatch))
-                            {
-                                imageFile = new FileInfo(ddspatch);
-                            }
-                            else if (File.Exists(gnfpath))
+                            if (File.Exists(gnfpath))
                             {
                                 imageFile = new FileInfo(gnfpath);
+                            }
+                            else if (File.Exists(ddspatch))
+                            {
+                                imageFile = new FileInfo(ddspatch);
                             }
                             else if (File.Exists(tgapatch))
                             {

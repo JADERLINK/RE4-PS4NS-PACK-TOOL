@@ -54,7 +54,7 @@ namespace RE4_PS4NS_PACK_TOOL
                         File.WriteAllText(Path.Combine(baseDiretory, PackID.ToString("x8"), i.ToString("D4") + ".reference"), refId.ToString("D4"));
                         Console.WriteLine("ID: " + i.ToString("D4") + " refers to the ID " + refId.ToString("D4"));
                     }
-                    else if (offsets[i] < pack.BaseStream.Length)
+                    else if (offsets[i] < pack.BaseStream.Length && offsets[i] > 0)
                     {
                         offsetVisiteds.Add(offsets[i], i);
 
