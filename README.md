@@ -6,6 +6,9 @@ Extract and repack RE4 PS4/NS .pack files
 Programa destinado a extrair e reempacotar arquivos .pack das versão de PS4 e NS;
 <br> Ao extrair será gerado um arquivo de extenção .idxps4nspack, ele será usado para o repack.
 
+**update: 1.0.6**
+<br>Agora, a tool aceita vários arquivos como parâmetro, assim, podendo extrair ou recompactar vários arquivos .pack;
+
 **update: 1.0.5**
 <br> Melhorias, agora, caso tenha um GNF e um DDS com mesmo ID, ele vai considerar o GNF em vez do DDS.
 
@@ -25,19 +28,19 @@ Programa destinado a extrair e reempacotar arquivos .pack das versão de PS4 e N
 ## Extract
 
 Exemplo:
-<br>RE4_PS4NS_PACK_TOOL.exe "01000000.pack"
+<br>*RE4_PS4NS_PACK_TOOL.exe "01000000.pack"*
 
-* Ira gerar um arquivo de nome "01000000.pack.idxps4nspack"
-* Ira criar uma pasta de nome "01000000"
-* Na pasta vão conter as texturas, nomeadas numericamente com 4 dígitos. Ex: 0000.dds
+* Vai gerar um arquivo de nome "01000000.pack.idxps4nspack";
+* Vai criar uma pasta de nome "01000000";
+* Na pasta vão conter as texturas, nomeadas numericamente com 4 dígitos. Ex: 0000.dds;
 
 ## Repack
 
 Exemplo:
-<br>RE4_PS4NS_PACK_TOOL.exe "01000000.pack.idxps4nspack"
+<br>*RE4_PS4NS_PACK_TOOL.exe "01000000.pack.idxps4nspack"*
 
-* Vai ler as imagens da pasta "01000000"
-A quantidade é definida pela numeração, (então não deixe imagens faltando no meio).
+* Vai ler as imagens da pasta "01000000";
+* A quantidade é definida pela numeração (então não deixe imagens faltando no meio);
 * O nome do arquivo gerado é o mesmo nome do idxps4nspack, mas sem o .idxps4nspack;
 
 ## Avisos:
@@ -45,4 +48,4 @@ A versão de NS só aceita imagens no formato DDS (também aceita TGA, porém n�
 <br>A versão de PS4 só aceita imagens no formato GNF (e TGA, porém esse é pouco usado no jogo);
 
 **At.te: JADERLINK**
-<br>2024-08-25
+<br>2024-09-28

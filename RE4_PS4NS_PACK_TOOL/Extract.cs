@@ -7,9 +7,9 @@ using System.IO;
 
 namespace RE4_PS4NS_PACK_TOOL
 {
-    public static class Extract
+    internal static class Extract
     {
-        public static void ExtractFile(string file)
+        internal static void ExtractFile(string file)
         {
             FileInfo fileInfo = new FileInfo(file);
             string baseName = fileInfo.Name;

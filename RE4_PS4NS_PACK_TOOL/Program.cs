@@ -7,14 +7,16 @@ using System.IO;
 
 namespace RE4_PS4NS_PACK_TOOL
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        internal static void Main(string[] args)
         {
+            System.Globalization.CultureInfo.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
+
             Console.WriteLine("# RE4 PS4NS PACK TOOL");
             Console.WriteLine("# By: JADERLINK");
             Console.WriteLine("# youtube.com/@JADERLINK");
-            Console.WriteLine("# VERSION 1.0.5 (2024-08-25)");
+            Console.WriteLine("# VERSION 1.0.6 (2024-09-28)");
 
             if (args.Length == 0)
             {
@@ -23,56 +25,63 @@ namespace RE4_PS4NS_PACK_TOOL
                 Console.WriteLine("Press any key to close the console.");
                 Console.ReadKey();
             }
-            else if (args.Length >= 1 && File.Exists(args[0]))
+            else
             {
-                FileInfo info = null;
-
-                try
+                for (int i = 0; i < args.Length; i++)
                 {
-                    info = new FileInfo(args[0]);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error in the path: " + Environment.NewLine + ex);
-                }
-                if (info != null)
-                {
-                    Console.WriteLine("File: " + info.Name);
-
-                    if (info.Extension.ToUpperInvariant() == ".PACK")
+                    if (File.Exists(args[i]))
                     {
+                        FileInfo info = null;
+
                         try
                         {
-                            Extract.ExtractFile(info.FullName);
+                            info = new FileInfo(args[i]);
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("Error: " + Environment.NewLine + ex);
+                            Console.WriteLine("Error in the path: " + Environment.NewLine + ex);
+                        }
+                        if (info != null)
+                        {
+                            Console.WriteLine("File: " + info.Name);
+
+                            if (info.Extension.ToUpperInvariant() == ".PACK")
+                            {
+                                try
+                                {
+                                    Extract.ExtractFile(info.FullName);
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine("Error: " + Environment.NewLine + ex);
+                                }
+
+                            }
+                            else if (info.Extension.ToUpperInvariant() == ".IDXPS4NSPACK")
+                            {
+                                try
+                                {
+                                    Repack.RepackFile(info.FullName);
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine("Error: " + Environment.NewLine + ex);
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("The extension is not valid: " + info.Extension);
+                            }
+
                         }
 
-                    }
-                    else if (info.Extension.ToUpperInvariant() == ".IDXPS4NSPACK")
-                    {
-                        try
-                        {
-                            Repack.RepackFile(info.FullName);
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine("Error: " + Environment.NewLine + ex);
-                        }
                     }
                     else
                     {
-                        Console.WriteLine("The extension is not valid: " + info.Extension);
+                        Console.WriteLine("File specified does not exist: " + args[i]);
                     }
 
                 }
-   
-            }
-            else
-            {
-                Console.WriteLine("File specified does not exist.");
             }
 
             Console.WriteLine("Finished!!!");

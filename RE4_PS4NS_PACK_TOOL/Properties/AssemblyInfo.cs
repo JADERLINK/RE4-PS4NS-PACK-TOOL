@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Altere estes valores de atributo para modificar as informações
 // associadas a um assembly.
 [assembly: AssemblyTitle("RE4_PS4NS_PACK_TOOL")]
-[assembly: AssemblyDescription("RE4_PS4NS_PACK_TOOL")]
+[assembly: AssemblyDescription("RE4_PS4NS_PACK_TOOL by JADERLINK")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("JADERLINK")]
 [assembly: AssemblyProduct("RE4_PS4NS_PACK_TOOL")]

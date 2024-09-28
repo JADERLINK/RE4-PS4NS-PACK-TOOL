@@ -7,9 +7,9 @@ using System.IO;
 
 namespace RE4_PS4NS_PACK_TOOL
 {
-    public static class Repack
+    internal static class Repack
     {
-        public static void RepackFile(string file)
+        internal static void RepackFile(string file)
         {
             StreamReader idx = null;
             FileInfo fileInfo = new FileInfo(file);
@@ -120,7 +120,7 @@ namespace RE4_PS4NS_PACK_TOOL
                         packFile.Write(iCount);
 
                         //header calculo
-                        uint headerLength = (iCount * 8) + 8;
+                        uint headerLength = (iCount * 8) + 8; //diferença entre as tools
                         uint line = headerLength / 16;
                         uint rest = headerLength % 16;
                         if (rest != 0)
@@ -204,7 +204,7 @@ namespace RE4_PS4NS_PACK_TOOL
                                     } 
                                 }
 
-                                packFile.BaseStream.Position = 8 + (i * 8);
+                                packFile.BaseStream.Position = 8 + (i * 8); //diferença entre as tools
                                 packFile.Write(Offset);
 
                                 if (Offset != 0)
