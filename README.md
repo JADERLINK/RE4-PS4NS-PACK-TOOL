@@ -6,6 +6,12 @@ Extract and repack RE4 PS4/NS .pack files
 Programa destinado a extrair e reempacotar arquivos .pack das versão de PS4 e NS;
 <br> Ao extrair será gerado um arquivo de extenção .idxps4nspack, ele será usado para o repack.
 
+**update: 1.0.7**
+<br>Corrigido bug ao extrair arquivos de imagens com 0 de tamanho.
+<br>Agora, ao arrastar arquivos sobre o programa, ele vai ficar aberto após extrair/reempacotar.
+<br>Os arquivos bat funcionam iguais a antes, mas agora adicionei mais um parâmetro neles.
+
+
 **update: 1.0.6**
 <br>Agora, a tool aceita vários arquivos como parâmetro, assim, podendo extrair ou recompactar vários arquivos .pack;
 
@@ -48,4 +54,4 @@ A versão de NS só aceita imagens no formato DDS (também aceita TGA, porém n�
 <br>A versão de PS4 só aceita imagens no formato GNF (e TGA, porém esse é pouco usado no jogo);
 
 **At.te: JADERLINK**
-<br>2024-09-28
+<br>2025-01-07
