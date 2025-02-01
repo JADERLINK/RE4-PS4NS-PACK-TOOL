@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.35229.62
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RE4_PS4NS_PACK_TOOL", "RE4_PS4NS_PACK_TOOL.csproj", "{F4B0D362-7814-4234-84B8-31D8941D338F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4B0D362-7814-4234-84B8-31D8941D338F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4B0D362-7814-4234-84B8-31D8941D338F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4B0D362-7814-4234-84B8-31D8941D338F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4B0D362-7814-4234-84B8-31D8941D338F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {999E5A16-DE85-4E8C-8503-11F92D22245D}
+	EndGlobalSection
+EndGlobal

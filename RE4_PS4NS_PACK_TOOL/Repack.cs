@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
+
 namespace RE4_PS4NS_PACK_TOOL
 {
     internal static class Repack
@@ -98,13 +99,23 @@ namespace RE4_PS4NS_PACK_TOOL
 
                         while (asFile)
                         {
-                            string ddspath = Path.Combine(ImageFolder, iCount.ToString("D4") + ".dds");
                             string gnfpath = Path.Combine(ImageFolder, iCount.ToString("D4") + ".gnf");
+                            string ddspath = Path.Combine(ImageFolder, iCount.ToString("D4") + ".dds");
                             string tgapath = Path.Combine(ImageFolder, iCount.ToString("D4") + ".tga");
+                            
+                            
                             string empty = Path.Combine(ImageFolder, iCount.ToString("D4") + ".empty");
                             string reference = Path.Combine(ImageFolder, iCount.ToString("D4") + ".reference");
+                            string _null = Path.Combine(ImageFolder, iCount.ToString("D4") + ".null");
 
-                            if (File.Exists(ddspath) || File.Exists(gnfpath) || File.Exists(tgapath) || File.Exists(empty) || File.Exists(reference))
+                            if (File.Exists(gnfpath)
+                                || File.Exists(ddspath)
+                                || File.Exists(tgapath)
+
+
+                                || File.Exists(empty)
+                                || File.Exists(reference)
+                                || File.Exists(_null))
                             {
                                 iCount++;
                             }
@@ -139,23 +150,20 @@ namespace RE4_PS4NS_PACK_TOOL
 
                         for (int i = 0; i < iCount; i++)
                         {
-                            string ddspatch = Path.Combine(ImageFolder, i.ToString("D4") + ".dds");
                             string gnfpath = Path.Combine(ImageFolder, i.ToString("D4") + ".gnf");
-                            string tgapatch = Path.Combine(ImageFolder, i.ToString("D4") + ".tga");
+                            string ddspath = Path.Combine(ImageFolder, i.ToString("D4") + ".dds");
+                            string tgapath = Path.Combine(ImageFolder, i.ToString("D4") + ".tga");
+
+
+                            string _null = Path.Combine(ImageFolder, i.ToString("D4") + ".null");
 
                             FileInfo imageFile = null;
-                            if (File.Exists(gnfpath))
-                            {
-                                imageFile = new FileInfo(gnfpath);
-                            }
-                            else if (File.Exists(ddspatch))
-                            {
-                                imageFile = new FileInfo(ddspatch);
-                            }
-                            else if (File.Exists(tgapatch))
-                            {
-                                imageFile = new FileInfo(tgapatch);
-                            }
+                                 if (File.Exists(gnfpath))   { imageFile = new FileInfo(gnfpath); }
+                            else if (File.Exists(ddspath))   { imageFile = new FileInfo(ddspath); }
+                            
+                            
+                            else if (File.Exists(tgapath))   { imageFile = new FileInfo(tgapath); }
+                            else if (File.Exists(_null))     { imageFile = new FileInfo(_null); }
 
                             if (imageFile != null)
                             {
@@ -169,7 +177,12 @@ namespace RE4_PS4NS_PACK_TOOL
                                 packFile.Write((uint)imageFile.Length);
                                 packFile.Write(0xFFFFFFFF);
                                 packFile.Write(magic);
-                                packFile.Write((uint)0);
+
+                                string ext = imageFile.Extension.ToUpperInvariant();
+                                if (ext.Contains("DDS") || ext.Contains("GNF"))
+                                { packFile.Write((uint)0); }
+                                else
+                                { packFile.Write((uint)1); }
 
                                 var fileStream = imageFile.OpenRead();
                                 fileStream.CopyTo(packFile.BaseStream);

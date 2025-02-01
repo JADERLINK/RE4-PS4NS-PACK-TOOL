@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // As informações gerais sobre um assembly são controladas por
 // conjunto de atributos. Altere estes valores de atributo para modificar as informações
 // associadas a um assembly.
-[assembly: AssemblyTitle("RE4_PS4NS_PACK_TOOL")]
-[assembly: AssemblyDescription("RE4_PS4NS_PACK_TOOL by JADERLINK")]
+[assembly: AssemblyTitle("RE4 PS4NS PACK TOOL")]
+[assembly: AssemblyDescription("RE4 PS4NS PACK TOOL by JADERLINK")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("JADERLINK")]
-[assembly: AssemblyProduct("RE4_PS4NS_PACK_TOOL")]
+[assembly: AssemblyProduct("RE4 PS4NS PACK TOOL")]
 [assembly: AssemblyCopyright("Copyright ©JADERLINK 2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

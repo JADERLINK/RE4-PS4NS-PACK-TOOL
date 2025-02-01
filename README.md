@@ -6,30 +6,7 @@ Extract and repack RE4 PS4/NS .pack files
 Programa destinado a extrair e reempacotar arquivos .pack das versão de PS4 e NS;
 <br> Ao extrair será gerado um arquivo de extenção .idxps4nspack, ele será usado para o repack.
 
-**update: 1.0.7**
-<br>Corrigido bug ao extrair arquivos de imagens com 0 de tamanho.
-<br>Agora, ao arrastar arquivos sobre o programa, ele vai ficar aberto após extrair/reempacotar.
-<br>Os arquivos bat funcionam iguais a antes, mas agora adicionei mais um parâmetro neles.
-
-
-**update: 1.0.6**
-<br>Agora, a tool aceita vários arquivos como parâmetro, assim, podendo extrair ou recompactar vários arquivos .pack;
-
-**update: 1.0.5**
-<br> Melhorias, agora, caso tenha um GNF e um DDS com mesmo ID, ele vai considerar o GNF em vez do DDS.
-
-**update: 1.0.4**
-<br> Melhorias no código. (versão de lançamento para essa tool)
-
-**update: 1.0.3**
-<br>Adicionado suporte ao arquivo de formato ".reference", dentro dele vai ter o ID de uma textura anterior referenciada, serve para colocar a mesma textura em mais de um ID, ocupando o espaço em disco de um único arquivo de textura, porém na memória do jogo, vai ocupar o espaço de duas texturas.
-
-**update: 1.0.2**
-<br>Arrumado o alinhamento dos arquivos, corrigidos bugs.
-
-**update: 1.0.1**
-<br>Agora, além dos arquivos .dds e .tga, ele aceita arquivos .empty que representa que aquela numeração está vazia, assim pode você pular a numeração sem ocupar mais espaço no arquivo.
-<br>Nota: você não pode fazer referência a numerações de arquivos "empty" no tpl, pois realmente não existe imagem ali. No lugar, será exibida a textura de botões.
+**Last Update: V.1.0.8**
 
 ## Extract
 
@@ -50,8 +27,13 @@ Exemplo:
 * O nome do arquivo gerado é o mesmo nome do idxps4nspack, mas sem o .idxps4nspack;
 
 ## Avisos:
-A versão de NS só aceita imagens no formato DDS (também aceita TGA, porém não é usado no jogo);
-<br>A versão de PS4 só aceita imagens no formato GNF (e TGA, porém esse é pouco usado no jogo);
+A versão de NS só aceita imagens no formato DDS (também aceita TGA [sem compresão], porém não é usado no jogo);
+<br>A versão de PS4 só aceita imagens no formato GNF (e TGA [sem compresão], porém esse é pouco usado no jogo);
+
+## Empty and Reference
+
+Para pular numeração, uso um arquivo com o formato .empty (não vai ter imagem nessa numeração, então não a referencie no TPL) Ex: 0001.empty
+<br>Para referenciar uma imagem anterior (repeti-la), use o arquivo .reference e dentro escreva o ID da imagem. Ex: 0002.reference, e o conteúdo do arquivo vai ser: "0000" , para referenciar a textura de ID 0;
 
 **At.te: JADERLINK**
-<br>2025-01-07
+<br>2025-02-01

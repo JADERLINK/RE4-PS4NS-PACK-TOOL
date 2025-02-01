@@ -16,7 +16,8 @@ namespace RE4_PS4NS_PACK_TOOL
             Console.WriteLine("# RE4 PS4NS PACK TOOL");
             Console.WriteLine("# By: JADERLINK");
             Console.WriteLine("# youtube.com/@JADERLINK");
-            Console.WriteLine("# VERSION 1.0.7 (2025-01-07)");
+            Console.WriteLine("# github.com/JADERLINK");
+            Console.WriteLine("# VERSION 1.0.8 (2025-01-31)");
 
             if (args.Length == 0)
             {
